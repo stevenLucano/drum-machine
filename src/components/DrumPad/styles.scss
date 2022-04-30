@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&display=swap');
+
+.drum-pad {
+    width: 100px;
+    height: 80px;
+    background: #808080;
+    border-radius: 5px;
+    box-shadow: 3px 3px 6px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 30px;
+    -webkit-user-select: none;
+    user-select: none;
+}

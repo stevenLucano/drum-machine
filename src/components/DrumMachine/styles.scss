@@ -1,0 +1,32 @@
+#drum-machine {
+    width: 660px;
+    height: 320px;
+    background-color: #b3b3b3;
+    position: absolute;
+    top: calc(50% - 160px);
+    left: calc(50% - 330px);
+    outline: 5px solid orange;
+    display: flex;
+}
+
+#section-pad {
+    box-sizing: border-box;
+    width: 60%;
+    height: 100%;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 80px);
+    padding: 30px;
+}
+
+#controls-pad {
+    padding: 20px 0;
+    box-sizing: border-box;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
