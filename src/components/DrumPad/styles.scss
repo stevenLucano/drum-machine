@@ -14,3 +14,10 @@
     -webkit-user-select: none;
     user-select: none;
 }
+
+@media(max-width:500px) {
+    .drum-pad {
+        width: 24vw;
+        height: 9vh;
+    }
+}

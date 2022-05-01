@@ -30,3 +30,50 @@
     align-items: center;
     justify-content: space-evenly;
 }
+
+@media(max-width:720px) {
+    #drum-machine {
+        width: 380px;
+        height: 620px;
+        flex-direction: column;
+        position: absolute;
+        top: calc(50vh - 310px);
+        left: calc(50vw - 190px);
+    }
+
+    #section-pad {
+        width: 100%;
+        height: 50%;
+    }
+
+    #controls-pad {
+        width: 100%;
+        height: 50%;
+    }
+}
+
+@media(max-width:500px) {
+    #drum-machine {
+        width: 90vw;
+        height: 60vh;
+        flex-direction: column;
+        position: absolute;
+        top: 20vh;
+        left: 5vw;
+    }
+
+    #section-pad {
+        padding: 2vh 7vw;
+        height: 33vh;
+        grid-gap: 1vh 2vw;
+        grid-template-columns: repeat(3, 24vw);
+        grid-template-rows: repeat(3, 9vh);
+    }
+
+    #controls-pad {
+        height: 27vh;
+        padding: 0 0 2vh 0;
+        margin: 0;
+        justify-content: space-between;
+    }
+}

@@ -23,6 +23,9 @@ const DrumPad = ({letter}) => {
             id={`key-${letter}`}
             onMouseDown={btnDown}
             onMouseUp={btnUp}
+            onTouchStart={btnDown}
+            onTouchEnd={btnUp}
+            onMouseOut={btnUp}
             >
             <h6>{letter}</h6>
         </div>
