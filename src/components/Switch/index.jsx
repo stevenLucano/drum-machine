@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
 import './styles.scss';
 
-const Switch = ({title,fnc,act,des, fnmain}) => {
+const Switch = ({title,fnc,act,des, fnmain, mode}) => {
     
     const message = (idBtn) => {
         const btn = document.getElementById(idBtn);
         if(idBtn === 'btn-Power') {
             return btn.classList.contains('on') ? 'Apagado' : 'Encendido'
         } else if(idBtn === 'btn-Bank'){
-            return btn.classList.contains('on') ? 'Heater Kit' : 'Smooth Piano Kit'
+            if(btn.classList.contains('on')){
+                mode(1);
+                return 'Heater Kit';
+            } else {
+                mode(2);
+                return 'Smooth Piano Kit'
+            }
         }
     }
 

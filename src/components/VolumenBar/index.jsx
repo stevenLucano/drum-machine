@@ -1,7 +1,7 @@
 import React from 'react'
 import './styles.scss'
 
-const VolumenBar = ({fnc, act, des}) => {
+const VolumenBar = ({fnc, act, des, fnVol}) => {
 
     return (
         <>
@@ -13,7 +13,9 @@ const VolumenBar = ({fnc, act, des}) => {
                 max="100" 
                 onChange={() => {
                     const barVol = document.getElementById('vol');
+                    fnVol(barVol.value/100);
                     fnc(`Volumen: ${barVol.value}`)
+
                     act()
                 }}
                 onMouseDown={()=>{

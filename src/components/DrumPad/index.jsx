@@ -1,7 +1,7 @@
 import React from 'react'
 import './styles.scss'
 
-const DrumPad = ({letter, fnc, act, des}) => {
+const DrumPad = ({letter, audio, fnc, act, des, mode, vol}) => {
 
     
 
@@ -10,7 +10,7 @@ const DrumPad = ({letter, fnc, act, des}) => {
         btn.style.background = 'orange';
         btn.style.boxShadow = 'none';
         btn.style.transition = '0.2s';
-        fnc(letter);
+        fnc(mode===1?audio[0][0]:audio[1][0]);
     }
 
     const btnUp= () => {
@@ -25,6 +25,11 @@ const DrumPad = ({letter, fnc, act, des}) => {
             className='drum-pad' 
             id={`key-${letter}`}
             onMouseDown={() => {
+                const audioS = document.getElementById(letter);
+                audioS.pause();
+                audioS.currentTime = 0;
+                audioS.volume = vol;
+                audioS.play()
                 btnDown();
                 act();
             }}
@@ -42,6 +47,9 @@ const DrumPad = ({letter, fnc, act, des}) => {
             }}
             onMouseOut={btnUp}
             >
+            <audio id={letter} className="clip" src={
+                mode===1?audio[0][1]:audio[1][1]
+                }></audio>
             <h6>{letter}</h6>
         </div>
     )
