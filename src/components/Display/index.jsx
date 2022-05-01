@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './styles.scss'
 
-const Display = ({vol}) => {
+
+
+const Display = ({message, activated}) => {
+
+    // const [Text, setText] = useState(message);
+    // const [Active, setActive] = useState(true);
+
+    
     return (
-        <div id="display"><p>Volumen: {vol}</p></div>
+        <div id="display"><p>{activated?`${message}`:''}</p></div>
     )
 }
 
