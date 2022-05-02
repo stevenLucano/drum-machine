@@ -1,13 +1,11 @@
 import React from 'react'
 import './styles.scss'
 
-const DrumPad = ({letter, audio, fnc, act, des, mode, vol}) => {
-
-    
+const DrumPad = ({letter, audio, fnc, act, des, mode, vol, drum}) => {
 
     const btnDown = () => {
         const btn = document.getElementById(`key-${letter}`);
-        btn.style.background = 'orange';
+        btn.style.background = '#3d5afe';
         btn.style.boxShadow = 'none';
         btn.style.transition = '0.2s';
         fnc(mode===1?audio[0][0]:audio[1][0]);
@@ -15,7 +13,7 @@ const DrumPad = ({letter, audio, fnc, act, des, mode, vol}) => {
 
     const btnUp= () => {
         const btn = document.getElementById(`key-${letter}`);
-        btn.style.background = '#808080';
+        btn.style.background = '#4fc3f7';
         btn.style.boxShadow = '3px 3px 6px black';
         btn.style.transition = '0.2s';
     }
@@ -28,24 +26,27 @@ const DrumPad = ({letter, audio, fnc, act, des, mode, vol}) => {
                 const audioS = document.getElementById(letter);
                 audioS.pause();
                 audioS.currentTime = 0;
-                audioS.volume = vol;
-                audioS.play()
+                if(drum){
+                    audioS.volume = vol;
+                    audioS.play()
+                }
                 btnDown();
                 act();
             }}
             onMouseUp={() => {
                 btnUp();
-                des();
+                // des();
             }}
             onTouchStart={()=>{
                 act();
                 btnDown();
             }}
             onTouchEnd={()=>{
-                des();
-                btnUp()
+                // des();
+                btnUp();
             }}
             onMouseOut={btnUp}
+            
             >
             <audio id={letter} className="clip" src={
                 mode===1?audio[0][1]:audio[1][1]

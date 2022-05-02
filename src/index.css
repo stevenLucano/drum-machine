@@ -5,7 +5,7 @@
 }
 
 body {
-    background: #8d8d8d;
+    background: #0277bd;
     user-select: none;
     max-width: 100vw;
     max-height: 100vh;
@@ -20,5 +20,5 @@ body {
     height: 100vh;
     max-width: 100vw;
     max-height: 100vh;
-    background: #8d8d8d;
+    background: #e1f5fe;
 }
